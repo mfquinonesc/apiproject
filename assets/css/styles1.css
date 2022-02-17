@@ -1,20 +1,17 @@
 *{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
     text-decoration:none;
     list-style: none;
 }
 
 body{
-    margin: 0;
-    border: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
     background-color: rgba(0, 0, 0, 0.925);
 }
 
 /**/
-
-
 
 .navbar{
     position: fixed;
@@ -26,16 +23,12 @@ body{
     height: 15vh;
 }
 
-
-
-
 .navbar .max-width{
     padding-left: 100px;
     display: flex;
     align-items: center;
     justify-content:space-around   
 }
-
 
 .navbar .logo a{
     color: #fff;
