@@ -44,6 +44,7 @@ const fillForm = (data) => {
         html += `<h2 class="user-name">${user.name}</h2>`;
         html += `<p class="user-email"><span>Email: </span>${user.email}</p>`;
         html += `<p class="user-city"><span>City: </span>${user.address.city}</p>`;
+        html += '<a href="">Follow me</a>'
         html += '</div>';
         html += '</div>';
         i++;

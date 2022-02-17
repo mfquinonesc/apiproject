@@ -101,6 +101,23 @@ body{
     color:crimson;
     font-weight: 600;
 }
+
+.card .card-data a{   
+    background-color: crimson;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 6px;
+    border: 2px crimson solid;
+}
+
+.card .card-data a:hover{
+    background-color: transparent;
+    color: crimson;
+    font-weight: 600;
+}
+
+
 /**/
 
 footer{
@@ -110,8 +127,9 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    z-index: auto;
+    align-items: center; 
+    width: 100%;
+    bottom: 0;
 }
 
 
