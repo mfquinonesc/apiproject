@@ -2,31 +2,55 @@
 
 const API = "https://jsonplaceholder.typicode.com/users";
 
-const getData = (api) => {
+const DOGAPI = "https://random.dog/woof.json";
+
+let imageArray =[];
+
+const getUserData = (api) => {
     return fetch(api)
-    .then((response) => response.json())                    //promesa 
-    .then((json) => {
-        llenarDatos(json);
-    })                                                      // si se cumple la promesa
-    .catch((error) => {
-        console.log("Error", error);
-    });
+        .then((response) => response.json())                    //promesa 
+        .then((json) => {
+            fillForm(json);
+        })                                                      // si se cumple la promesa
+        .catch((error) => {
+            console.log("Error", error);
+        });
 };
 
 
-const llenarDatos = (data) => {
-    let html = "";
-    data.forEach((user) => {
-        html += '<div class="card" style="width: 18rem;">';
-        html += `<img src="" class="card-img-top" alt="...">`;
-        html += '<div class="card-body">';
-        html += `<h5 class="card-title">${user.name}</h5>`;
-        html += `<p class="card-text">${user.email}</p>`;
-        html += `<a href="#" class="btn btn-primary">${user.address.city}</a>`;
-        html += ' </div>';
+function fillImageArray(){
+    fetch(DOGAPI)
+        .then(response => response.json())
+        .then(data => imageArray.push(data.url));
+}
+
+
+const fillUrls = ()=>{
+    for(let i =0; i < 10;i++){
+        fillImageArray();
+    }
+    console.log(imageArray);
+};
+
+const fillForm = (data) => {
+    let html = "";  
+    let i = 0;
+    data.forEach((user) => {                    
+        html += '<div class="card">';
+        html += '<div class="card-img">';
+        html += `<img src="${imageArray[i]}" alt="User Image">`;
         html += '</div>';
+        html += '<div class="card-data">';
+        html += `<h2 class="user-name">${user.name}</h2>`;
+        html += `<p class="user-email"><span>Email: </span>${user.email}</p>`;
+        html += `<p class="user-city"><span>City: </span>${user.address.city}</p>`;
+        html += '</div>';
+        html += '</div>';
+        i++;
     });
-    document.getElementById("character-data").innerHTML = html;
+    document.getElementById("user-data").innerHTML = html;
 };
 
-getData(API);
+fillUrls();
+getUserData(API);
+

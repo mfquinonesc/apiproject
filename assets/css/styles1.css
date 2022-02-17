@@ -1,17 +1,117 @@
+*{
+    text-decoration:none;
+    list-style: none;
+}
+
 body{
     margin: 0;
+    border: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.925);
 }
 
-.header{
-    width: 100%;
+/**/
+
+
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width:  100%;    
     z-index: 1;
+    transition: all 0.3s ease;
+    background-color: black;
+    height: 15vh;
 }
 
-.header-style{
-    color: rgb(43, 153, 226);
+
+
+
+.navbar .max-width{
+    padding-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around   
 }
-.character-data{
+
+
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.navbar .logo a span{
+    color: crimson;
+    transition: all 0.3s ease;
+}
+
+/* card */
+
+.user-data{
     margin-top: 150px;
     margin-bottom: 60px;
 }
+
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+
+.card-img{
+    background-color:antiquewhite;
+    width: 30vh;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+.card-img img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.card-data{
+    width: 100%;
+    padding-left: 20px;
+}
+
+.card .user-email{
+    color: black;
+}
+
+.card .user-city{
+    color: black;;
+}
+
+.card .user-email span{
+    color:crimson;
+    font-weight: 600;
+}
+
+.card .user-city span{
+    color:crimson;
+    font-weight: 600;
+}
+/**/
+
+footer{
+    height: 25vh;
+    background-color: crimson;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: auto;
+}
+
+
